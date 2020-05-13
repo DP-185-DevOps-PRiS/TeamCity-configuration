@@ -34,5 +34,14 @@ object Application_Deployment : Template({
             param("jetbrains.buildServer.sshexec.authMethod", "DEFAULT_KEY")
             param("jetbrains.buildServer.deployer.ssh.transport", "jetbrains.buildServer.deployer.ssh.transport.scp")
         }
+        step {
+            name = "Run deploy.sh"
+            id = "RUNNER_8"
+            type = "ssh-exec-runner"
+            param("jetbrains.buildServer.deployer.username", "%username%")
+            param("jetbrains.buildServer.sshexec.command", "cd /opt/kickscooter && sudo bash deploy.sh")
+            param("jetbrains.buildServer.deployer.targetUrl", "%vm_ip%")
+            param("jetbrains.buildServer.sshexec.authMethod", "UPLOADED_KEY")
+        }
     }
 })
