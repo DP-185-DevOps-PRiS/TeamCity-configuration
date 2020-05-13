@@ -8,4 +8,8 @@ object Application_Deployment : Template({
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
+
+    vcs {
+        root(_Self.vcsRoots.Dp185DevOpsPRiS)
+    }
 })
