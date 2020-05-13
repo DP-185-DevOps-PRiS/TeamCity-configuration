@@ -11,6 +11,7 @@ object Project : Project({
 
     template(Application_PackagingTemplate)
     template(Application_Docker)
+    template(Application_Deployment)
 
     features {
         dockerRegistry {
