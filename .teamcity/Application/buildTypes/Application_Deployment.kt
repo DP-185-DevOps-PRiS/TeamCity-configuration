@@ -9,6 +9,10 @@ object Application_Deployment : Template({
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
+    params {
+        param("repo", "Deployment")
+    }
+
     vcs {
         root(_Self.vcsRoots.Dp185DevOpsPRiS)
     }
