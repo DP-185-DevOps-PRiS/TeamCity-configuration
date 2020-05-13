@@ -13,11 +13,6 @@ object Terraform_InfrastructureCreation : BuildType({
             arguments = "init"
         }
         exec {
-            name = "Plan"
-            path = "terraform"
-            arguments = "plan"
-        }
-        exec {
             name = "Apply"
             path = "terraform"
             arguments = "apply"
