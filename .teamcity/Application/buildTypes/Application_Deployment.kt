@@ -10,6 +10,7 @@ object Application_Deployment : Template({
     maxRunningBuilds = 1
 
     params {
+        password("vm_ip", "credentialsJSON:607df04b-90b3-4584-b210-d63c0f6ea59b", display = ParameterDisplay.HIDDEN, readOnly = true)
         param("repo", "Deployment")
         password("username", "credentialsJSON:da22594b-73c4-4496-afd6-71512fc907e7", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
