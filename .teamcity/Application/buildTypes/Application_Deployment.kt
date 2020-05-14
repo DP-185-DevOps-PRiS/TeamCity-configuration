@@ -11,7 +11,6 @@ object Application_Deployment : Template({
 
     params {
         param("repo", "Deployment")
-        password("username", "credentialsJSON:da22594b-73c4-4496-afd6-71512fc907e7", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
 
     vcs {
