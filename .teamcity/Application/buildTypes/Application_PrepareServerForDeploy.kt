@@ -16,16 +16,6 @@ object Application_PrepareServerForDeploy : BuildType({
 
     steps {
         script {
-            name = "Update env-templates"
-            scriptContent = """
-                echo "Download current IPs"
-                scp 
-                IP_APP=${'$'}( cat IPs/vm_ip_pub.txt )
-                IP_APP=${'$'}( cat IPs/vm_ip_pub.txt )
-                ssh %username%@
-            """.trimIndent()
-        }
-        script {
             name = "Send env-files, deploy script and docker-compose.yml"
             scriptContent = """
                 echo "Downloading current IPs ..."
