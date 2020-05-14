@@ -20,7 +20,7 @@ object Project : Project({
             id = "PROJECT_EXT_2"
             type = "CloudImage"
             param("subnet", "default")
-            param("growingId", "true")
+            param("growingId", "false")
             param("agent_pool_id", "-2")
             param("source-id", "terraform-agent")
             param("network", "default")
