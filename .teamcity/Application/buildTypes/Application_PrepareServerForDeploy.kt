@@ -32,7 +32,7 @@ object Application_PrepareServerForDeploy : BuildType({
             name = "Send env-files, deploy script and docker-compose.yml"
             scriptContent = """
                 echo "Downloading current IPs ..."
-                scp -i .ssh/.tc/tc.pub -r %username_tc%@%ip_tc%:~/IPs .
+                scp -i .ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs .
                 
                 echo "Setting IP variables ..."
                 IP_APP_PUBLIC=${'$'}( cat IPs/vm_ip_pub.txt )
