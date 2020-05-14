@@ -1,7 +1,6 @@
 package Terraform.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
-import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.exec
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 object Terraform_InfrastructureCreation : BuildType({
@@ -14,11 +13,6 @@ object Terraform_InfrastructureCreation : BuildType({
                 terraform init
                 terraform apply -auto-approve
             """.trimIndent()
-        }
-        exec {
-            name = "Apply"
-            path = "terraform"
-            arguments = "apply -auto-approve"
         }
         step {
             name = "Save IP addresses"
