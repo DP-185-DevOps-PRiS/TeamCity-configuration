@@ -9,6 +9,8 @@ object Project : Project({
     id("Application")
     name = "Application"
 
+    buildType(Application_PrepareServerForDeploy)
+
     template(Application_PackagingTemplate)
     template(Application_Docker)
     template(Application_Deployment)
