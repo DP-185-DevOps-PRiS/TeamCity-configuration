@@ -4,7 +4,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 object Terraform_InfrastructureCreation : BuildType({
-    name = "Infrastructure creation"
+    name = "Create infrastructure"
 
     steps {
         script {
