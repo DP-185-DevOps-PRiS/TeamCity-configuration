@@ -37,17 +37,18 @@ object Project : Project({
         feature {
             id = "google-4"
             type = "CloudProfile"
-            param("agentPushPreset", "")
-            param("profileId", "google-4")
             param("profileServerUrl", "http://10.128.0.3:8111")
-            param("name", "Google-terraform-agent")
+            param("system.cloud.profile_id", "google-4")
             param("total-work-time", "")
             param("credentialsType", "key")
             param("description", "")
-            param("next-hour", "")
             param("cloud-code", "google")
-            param("terminate-idle-time", "3")
             param("enabled", "true")
+            param("agentPushPreset", "")
+            param("profileId", "google-4")
+            param("name", "Google-terraform-agent")
+            param("next-hour", "")
+            param("terminate-idle-time", "1")
             param("secure:accessKey", "credentialsJSON:1d60cf65-375e-40be-ae27-e374c8f2a8e3")
         }
     }
