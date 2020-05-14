@@ -65,10 +65,4 @@ object Application_PrepareServerForDeploy : BuildType({
             successfulOnly = true
         }
     }
-
-    dependencies {
-        snapshot(Terraform.buildTypes.Terraform_InfrastructureCreation) {
-            onDependencyFailure = FailureAction.CANCEL
-        }
-    }
 })
