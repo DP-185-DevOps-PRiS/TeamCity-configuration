@@ -8,6 +8,7 @@ object Application_PrepareServerForDeploy : BuildType({
 
     params {
         password("username_app", "credentialsJSON:da22594b-73c4-4496-afd6-71512fc907e7", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("secret_key", "credentialsJSON:38c2872a-77ec-4818-835b-62ea6642d340", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("mail_password", "credentialsJSON:4ec2f34f-a6be-4705-b82d-f99fece188d4", display = ParameterDisplay.HIDDEN, readOnly = true)
         param("repo", "Deployment")
         password("env_templates_path", "credentialsJSON:02a4c958-c2cb-4f38-9542-a2a57c6dd06f", display = ParameterDisplay.HIDDEN, readOnly = true)
