@@ -15,7 +15,7 @@ object Terraform_InfrastructureCreation : BuildType({
         exec {
             name = "Apply"
             path = "terraform"
-            arguments = "apply"
+            arguments = "apply -auto-approve"
         }
         step {
             name = "Save IP addresses"
