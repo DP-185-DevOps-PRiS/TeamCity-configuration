@@ -1,6 +1,7 @@
 package Application_Simulation.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
 object Application_Simulation_Deploy : BuildType({
     templates(Application.buildTypes.Application_Deploy)
@@ -8,6 +9,14 @@ object Application_Simulation_Deploy : BuildType({
 
     params {
         param("container", "simulator")
+    }
+
+    triggers {
+        finishBuildTrigger {
+            id = "TRIGGER_22"
+            buildType = "${Application_Simulation_BuildPushImageToAcr.id}"
+            successfulOnly = true
+        }
     }
 
     dependencies {
