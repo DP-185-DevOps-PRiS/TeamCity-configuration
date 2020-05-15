@@ -13,6 +13,7 @@ object Terraform_InfrastructureDestroying : BuildType({
     steps {
         exec {
             name = "Destroy"
+            workingDir = "terraform_infrastructure"
             path = "terraform"
             arguments = "destroy"
         }
