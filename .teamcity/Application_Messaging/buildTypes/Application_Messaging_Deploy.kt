@@ -9,4 +9,11 @@ object Application_Messaging_Deploy : BuildType({
     params {
         param("container", "messaging")
     }
+
+    dependencies {
+        snapshot(Application_Messaging_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
