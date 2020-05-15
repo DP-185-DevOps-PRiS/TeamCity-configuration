@@ -9,5 +9,6 @@ object Project : Project({
     name = "Gateway"
 
     buildType(Application_Gateway_Packaging)
+    buildType(Application_Gateway_Deploy)
     buildType(Application_Gateway_BuildPushImageToAcr)
 })
