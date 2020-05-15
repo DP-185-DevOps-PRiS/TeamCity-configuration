@@ -10,4 +10,5 @@ object Project : Project({
 
     buildType(Application_Messaging_Packaging)
     buildType(Application_Messaging_BuildPushImageToAcr)
+    buildType(Application_Messaging_Deploy)
 })
