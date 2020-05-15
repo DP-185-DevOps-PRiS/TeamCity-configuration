@@ -11,6 +11,7 @@ object Application_PrepareServerForDeploy : BuildType({
     params {
         password("username_app", "credentialsJSON:da22594b-73c4-4496-afd6-71512fc907e7", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.IDENTITY_DB", "credentialsJSON:2139cf49-8d8d-4993-bbc3-45b20f110b04", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("env.SIMULATOR_DB", "credentialsJSON:ec8aa025-bbe0-4ab1-8457-a76b2f73cf84", display = ParameterDisplay.HIDDEN, readOnly = true)
         param("repo", "Deployment")
         password("database_username", "credentialsJSON:cf6455f3-e3ea-471f-8248-9bd2f420a755", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("database_password", "credentialsJSON:bbb265da-3d7d-49c7-9a25-76240f4408d6", display = ParameterDisplay.HIDDEN, readOnly = true)
