@@ -9,4 +9,11 @@ object Application_Identity_Deploy : BuildType({
     params {
         param("container", "identity")
     }
+
+    dependencies {
+        snapshot(Application_Identity_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
