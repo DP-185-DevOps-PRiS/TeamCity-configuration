@@ -9,4 +9,11 @@ object Application_Gateway_Deploy : BuildType({
     params {
         param("container", "gateway")
     }
+
+    dependencies {
+        snapshot(Application_Gateway_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
