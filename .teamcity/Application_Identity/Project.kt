@@ -10,4 +10,5 @@ object Project : Project({
 
     buildType(Application_Identity_BuildPushImageToAcr)
     buildType(Application_Identity_Package)
+    buildType(Application_Identity_Deploy)
 })
