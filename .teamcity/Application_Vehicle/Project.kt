@@ -9,5 +9,6 @@ object Project : Project({
     name = "Vehicle"
 
     buildType(Application_Vehicle_BuildPushImageToAcr)
+    buildType(Application_Vehicle_Deploy)
     buildType(Application_Vehicle_Packaging)
 })
