@@ -9,4 +9,11 @@ object Application_Vehicle_Deploy : BuildType({
     params {
         param("container", "vehicle")
     }
+
+    dependencies {
+        snapshot(Application_Vehicle_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
