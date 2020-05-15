@@ -9,4 +9,11 @@ object Application_Trip_Deploy : BuildType({
     params {
         param("container", "trip")
     }
+
+    dependencies {
+        snapshot(Application_Trip_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
