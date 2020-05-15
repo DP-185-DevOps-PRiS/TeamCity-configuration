@@ -43,7 +43,7 @@ object Application_PrepareServerForDeploy : BuildType({
                 mkdir env && chmod 700 env
                 cp %env_templates_path%/kafka.env env
                 sed "s|eureka|${'$'}IP_APP_PRIVATE|" %env_templates_path%/gateway-template.env > env/gateway.env
-                sed "s|ip|${'$'}IP_DB|; s|DB|identity|; s|database_username|%database_username%|; s|database_password|%database_password%|; s|eureka|${'$'}IP_APP_PRIVATE|" %env_templates_path%/identity-template.env > env/identity.env
+                sed "s|ip|${'$'}IP_DB|; s|DB|'"identity"'|; s|database_username|%database_username%|; s|database_password|%database_password%|; s|eureka|${'$'}IP_APP_PRIVATE|" %env_templates_path%/identity-template.env > env/identity.env
                 sed 's/ip/${'$'}IP_DB/; s/DB/trip/; s/database_username/%database_username%/; s/database_password/%database_password%/; s/eureka/${'$'}IP_APP_PRIVATE/; s/token/%token%/' %env_templates_path%/trip-template.env > env/trip.env
                 sed 's/ip/${'$'}IP_DB/; s/DB/vehicle/; s/database_username/%database_username%/; s/database_password/%database_password%/; s/eureka/${'$'}IP_APP_PRIVATE/; s/token/%token%/' %env_templates_path%/vehicle-template.env > env/vehicle.env
                 sed 's/ip/${'$'}IP_DB/; s/DB/simulator/; s/database_username/%database_username%/; s/database_password/%database_password%/; s/eureka/${'$'}IP_APP_PRIVATE/; s/token/%token%/' %env_templates_path%/simulator-template.env > env/simulator.env
