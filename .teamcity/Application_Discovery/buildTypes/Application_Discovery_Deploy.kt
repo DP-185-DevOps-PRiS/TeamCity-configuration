@@ -9,4 +9,11 @@ object Application_Discovery_Deploy : BuildType({
     params {
         param("container", "discovery")
     }
+
+    dependencies {
+        snapshot(Application_Discovery_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
