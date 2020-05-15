@@ -9,5 +9,6 @@ object Project : Project({
     name = "Payment"
 
     buildType(Application_Payment_Packaging)
+    buildType(Application_Payment_Deploy)
     buildType(Application_Payment_BuildPushImageToAcr)
 })
