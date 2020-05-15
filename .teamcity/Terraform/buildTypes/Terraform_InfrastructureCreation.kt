@@ -18,6 +18,7 @@ object Terraform_InfrastructureCreation : BuildType({
     steps {
         script {
             name = "Init & Apply"
+            workingDir = "terraform_infrastructure"
             scriptContent = """
                 terraform init
                 terraform apply -auto-approve
