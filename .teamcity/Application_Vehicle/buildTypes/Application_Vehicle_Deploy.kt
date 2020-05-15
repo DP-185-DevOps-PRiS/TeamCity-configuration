@@ -1,6 +1,7 @@
 package Application_Vehicle.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
 object Application_Vehicle_Deploy : BuildType({
     templates(Application.buildTypes.Application_Deploy)
@@ -8,6 +9,14 @@ object Application_Vehicle_Deploy : BuildType({
 
     params {
         param("container", "vehicle")
+    }
+
+    triggers {
+        finishBuildTrigger {
+            id = "TRIGGER_24"
+            buildType = "${Application_Vehicle_BuildPushImageToAcr.id}"
+            successfulOnly = true
+        }
     }
 
     dependencies {
