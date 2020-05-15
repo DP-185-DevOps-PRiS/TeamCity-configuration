@@ -1,6 +1,7 @@
 package Application_Messaging.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
 object Application_Messaging_Deploy : BuildType({
     templates(Application.buildTypes.Application_Deploy)
@@ -8,6 +9,14 @@ object Application_Messaging_Deploy : BuildType({
 
     params {
         param("container", "messaging")
+    }
+
+    triggers {
+        finishBuildTrigger {
+            id = "TRIGGER_20"
+            buildType = "${Application_Messaging_BuildPushImageToAcr.id}"
+            successfulOnly = true
+        }
     }
 
     dependencies {
