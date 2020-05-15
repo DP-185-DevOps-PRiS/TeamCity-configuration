@@ -31,9 +31,8 @@ object Application_PrepareServerForDeploy : BuildType({
         script {
             name = "Send env-files, deploy script and docker-compose.yml"
             scriptContent = """
-                whoami
                 echo "Downloading current IPs ..."
-                scp -i .ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs .
+                scp -i /root/.ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs .
                 
                 echo "Setting IP variables ..."
                 IP_APP_PUBLIC=${'$'}( cat IPs/vm_ip_pub.txt )
