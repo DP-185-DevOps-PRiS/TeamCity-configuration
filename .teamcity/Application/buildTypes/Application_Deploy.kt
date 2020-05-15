@@ -10,6 +10,10 @@ object Application_Deploy : Template({
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
+    params {
+        password("ip_tc", "credentialsJSON:60cc8de1-2624-4259-b539-7063000c6f44", display = ParameterDisplay.HIDDEN, readOnly = true)
+    }
+
     steps {
         script {
             name = "Run deploy.sh"
