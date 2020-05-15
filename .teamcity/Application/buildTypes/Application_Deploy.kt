@@ -2,6 +2,7 @@ package Application.buildTypes
 
 import Application_Discovery.buildTypes.Application_Discovery_BuildPushImageToAcr
 import Application_Gateway.buildTypes.Application_Gateway_BuildPushImageToAcr
+import Application_Identity.buildTypes.Application_Identity_BuildPushImageToAcr
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
@@ -19,6 +20,10 @@ object Application_Deploy : BuildType({
         }
         finishBuildTrigger {
             buildType = "${Application_Gateway_BuildPushImageToAcr.id}"
+            successfulOnly = true
+        }
+        finishBuildTrigger {
+            buildType = "${Application_Identity_BuildPushImageToAcr.id}"
             successfulOnly = true
         }
     }
