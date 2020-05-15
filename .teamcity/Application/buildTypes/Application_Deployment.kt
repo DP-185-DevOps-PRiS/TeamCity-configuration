@@ -13,10 +13,6 @@ object Application_Deployment : Template({
         param("repo", "Deployment")
     }
 
-    vcs {
-        root(_Self.vcsRoots.Dp185DevOpsPRiS)
-    }
-
     steps {
         step {
             name = "Upload needed files"
