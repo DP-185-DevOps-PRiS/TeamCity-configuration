@@ -1,6 +1,8 @@
 package Application.buildTypes
 
+import Application_Discovery.buildTypes.Application_Discovery_BuildPushImageToAcr
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
 object Application_Deploy : BuildType({
     name = "Deploy"
@@ -8,4 +10,11 @@ object Application_Deploy : BuildType({
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
+
+    triggers {
+        finishBuildTrigger {
+            buildType = "${Application_Discovery_BuildPushImageToAcr.id}"
+            successfulOnly = true
+        }
+    }
 })
