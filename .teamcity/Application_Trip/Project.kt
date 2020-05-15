@@ -8,6 +8,7 @@ object Project : Project({
     id("Application_Trip")
     name = "Trip"
 
+    buildType(Application_Trip_Deploy)
     buildType(Application_Trip_Packaging)
     buildType(Application_Trip_BuildPushImageToAcr)
 })
