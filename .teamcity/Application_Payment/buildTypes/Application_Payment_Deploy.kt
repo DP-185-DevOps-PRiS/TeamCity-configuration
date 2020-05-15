@@ -9,4 +9,11 @@ object Application_Payment_Deploy : BuildType({
     params {
         param("container", "payment")
     }
+
+    dependencies {
+        snapshot(Application_Payment_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
