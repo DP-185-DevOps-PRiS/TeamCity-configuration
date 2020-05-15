@@ -8,6 +8,7 @@ object Project : Project({
     id("Application_Simulation")
     name = "Simulator"
 
+    buildType(Application_Simulation_Deploy)
     buildType(Application_Simulation_BuildPushImageToAcr)
     buildType(Application_Simulation_Packaging)
 })
