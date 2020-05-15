@@ -1,6 +1,7 @@
 package Application_Gateway.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.finishBuildTrigger
 
 object Application_Gateway_Deploy : BuildType({
     templates(Application.buildTypes.Application_Deploy)
@@ -8,6 +9,14 @@ object Application_Gateway_Deploy : BuildType({
 
     params {
         param("container", "gateway")
+    }
+
+    triggers {
+        finishBuildTrigger {
+            id = "TRIGGER_18"
+            buildType = "${Application_Gateway_BuildPushImageToAcr.id}"
+            successfulOnly = true
+        }
     }
 
     dependencies {
