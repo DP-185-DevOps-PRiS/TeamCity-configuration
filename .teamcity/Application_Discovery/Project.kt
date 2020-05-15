@@ -8,6 +8,7 @@ object Project : Project({
     id("Application_Discovery")
     name = "Discovery"
 
+    buildType(Application_Discovery_Deploy)
     buildType(Application_Discovery_Packaging)
     buildType(Application_Discovery_BuildPushImageToAcr)
 })
