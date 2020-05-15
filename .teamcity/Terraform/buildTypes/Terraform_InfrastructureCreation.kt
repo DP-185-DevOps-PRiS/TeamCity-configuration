@@ -11,6 +11,10 @@ object Terraform_InfrastructureCreation : BuildType({
         password("ip_tc", "credentialsJSON:60cc8de1-2624-4259-b539-7063000c6f44", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
 
+    vcs {
+        root(_Self.vcsRoots.Dp185DevOpsPRiS)
+    }
+
     steps {
         script {
             name = "Init & Apply"
