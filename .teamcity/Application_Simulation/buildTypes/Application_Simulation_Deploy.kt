@@ -9,4 +9,11 @@ object Application_Simulation_Deploy : BuildType({
     params {
         param("container", "simulator")
     }
+
+    dependencies {
+        snapshot(Application_Simulation_BuildPushImageToAcr) {
+            runOnSameAgent = true
+            onDependencyFailure = FailureAction.CANCEL
+        }
+    }
 })
