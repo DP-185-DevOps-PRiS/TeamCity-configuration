@@ -9,10 +9,6 @@ object Application_Deployment : Template({
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
 
-    params {
-        param("repo", "Deployment")
-    }
-
     steps {
         step {
             name = "Upload needed files"
