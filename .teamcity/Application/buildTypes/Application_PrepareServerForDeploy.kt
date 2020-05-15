@@ -40,7 +40,7 @@ object Application_PrepareServerForDeploy : BuildType({
                 IP_DB=${'$'}( cat IPs/db_ip.txt )
                 
                 echo "Updating env-templates ..."
-                mkdir env && chmod 600 env
+                mkdir env && chmod 700 env
                 cp %env_templates_path%/kafka.env env
                 sed "s|eureka|${'$'}IP_APP_PRIVATE|" %env_templates_path%/gateway-template.env > env/gateway.env
                 sed 's/ip/${'$'}IP_DB/; s/DB/identity/; s/database_username/%database_username%/; s/database_password/%database_password%/; s/eureka/${'$'}IP_APP_PRIVATE/' %env_templates_path%/identity-template.env > env/identity.env
