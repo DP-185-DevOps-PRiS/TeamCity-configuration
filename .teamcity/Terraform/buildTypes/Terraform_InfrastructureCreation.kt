@@ -24,6 +24,8 @@ object Terraform_InfrastructureCreation : BuildType({
             name = "Init & Apply"
             workingDir = "terraform_infrastructure"
             scriptContent = """
+                cp /root/gcp/fourthdemo-274718-829977cd6967.json .
+                
                 terraform init -backend=true
                 terraform apply -auto-approve
                 
