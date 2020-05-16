@@ -24,7 +24,7 @@ object Terraform_InfrastructureCreation : BuildType({
             name = "Init & Apply"
             workingDir = "terraform_infrastructure"
             scriptContent = """
-                terraform init -backend-config
+                terraform init -backend=true
                 terraform apply -auto-approve
                 
                 echo "Sending IPs ..."
