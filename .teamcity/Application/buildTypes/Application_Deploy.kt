@@ -28,7 +28,7 @@ object Application_Deploy : Template({
                 IP_APP_PRIVATE=${'$'}( cat vm_ip_priv.txt )
                 
                 echo "Run deploy.sh ..."
-                ssh %username_app%@${'$'}IP_APP_PRIVATE "cd /opt/kickscooter && sudo bash deploy.sh %container%"
+                ssh %username_app%@${'$'}IP_APP_PRIVATE "cd /opt/kickscooter && sudo docker login -u %user% -p %password% %server% && sudo bash deploy.sh %container%"
             """.trimIndent()
         }
     }
