@@ -24,7 +24,7 @@ object Terraform_InfrastructureCreation : BuildType({
                 terraform apply -auto-approve
                 
                 echo "Sending IPs ..."
-                scp db_ip.txt vm_ip_pub.txt vm_ip_priv.txt %username_tc%@%ip_tc%:/root/IPs
+                scp db_ip.txt vm_ip_priv.txt %username_tc%@%ip_tc%:/root/IPs
             """.trimIndent()
         }
     }
