@@ -41,7 +41,6 @@ object Application_PrepareServerForDeploy : BuildType({
                 scp -i /root/.ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs .
                 
                 echo "Setting IP variables ..."
-                IP_APP_PUBLIC=${'$'}( cat IPs/vm_ip_pub.txt )
                 IP_APP_PRIVATE=${'$'}( cat IPs/vm_ip_priv.txt )
                 IP_DB=${'$'}( cat IPs/db_ip.txt )
                 
@@ -57,10 +56,10 @@ object Application_PrepareServerForDeploy : BuildType({
                 sed "s|send_mail|%send_mail%|; s|mail_password|%mail_password%|; s|ip|${'$'}IP_DB|; s|DB|%env.MESSAGING_DB%|; s|database_username|%database_username%|; s|database_password|%database_password%|; s|eureka|${'$'}IP_APP_PRIVATE|; s|token|%token%|" %env_templates_path%/messaging-template.env > env/messaging.env
                 
                 echo "Creating a directory for the applicaion ..."
-                ssh %username_app%@${'$'}IP_APP_PUBLIC "sudo chown  %username_app% /opt && mkdir -p /opt/kickscooter"
+                ssh %username_app%@${'$'}IP_APP_PRIVATE "sudo chown  %username_app% /opt && mkdir -p /opt/kickscooter"
                 
                 echo "Sending needed files ..."
-                scp -r env deploy.sh docker-compose.yml %username_app%@${'$'}IP_APP_PUBLIC:/opt/kickscooter
+                scp -r env deploy.sh docker-compose.yml %username_app%@${'$'}IP_APP_PRIVATE:/opt/kickscooter
             """.trimIndent()
         }
     }
