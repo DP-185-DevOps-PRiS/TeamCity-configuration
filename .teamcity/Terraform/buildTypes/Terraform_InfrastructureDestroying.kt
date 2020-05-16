@@ -15,7 +15,7 @@ object Terraform_InfrastructureDestroying : BuildType({
             name = "Destroy"
             workingDir = "terraform_infrastructure"
             path = "terraform"
-            arguments = "destroy"
+            arguments = "destroy -auto-approve"
         }
     }
 })
