@@ -21,7 +21,7 @@ object Project : Project({
             name = "Azure Container Registry"
             url = "kickscooter.azurecr.io"
             userName = "kickscooter"
-            password = "credentialsJSON:694f8e29-d40b-4c47-8e42-c2cc22d08f7c"
+            password = "credentialsJSON:14665d28-7888-421c-9e5c-6854a9ec0b1f"
         }
         feature {
             id = "PROJECT_EXT_6"
