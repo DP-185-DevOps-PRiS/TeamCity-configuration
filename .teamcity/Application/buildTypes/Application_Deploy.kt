@@ -25,7 +25,7 @@ object Application_Deploy : Template({
                 scp -i /root/.ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs/vm_ip_priv.txt .
                 
                 echo "Setting IP variables ..."
-                IP_APP_PUBLIC=${'$'}( cat vm_ip_priv.txt )
+                IP_APP_PRIVATE=${'$'}( cat vm_ip_priv.txt )
                 
                 echo "Run deploy.sh ..."
                 ssh %username_app%@${'$'}IP_APP_PRIVATE "cd /opt/kickscooter && sudo bash deploy.sh %container%"
