@@ -22,13 +22,13 @@ object Application_Deploy : Template({
             id = "RUNNER_4"
             scriptContent = """
                 echo "Downloading current IPs ..."
-                scp -i /root/.ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs/vm_ip_pub.txt .
+                scp -i /root/.ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs/vm_ip_priv.txt .
                 
                 echo "Setting IP variables ..."
-                IP_APP_PUBLIC=${'$'}( cat vm_ip_pub.txt )
+                IP_APP_PUBLIC=${'$'}( cat vm_ip_priv.txt )
                 
                 echo "Run deploy.sh ..."
-                ssh %username_app%@${'$'}IP_APP_PUBLIC "cd /opt/kickscooter && sudo bash deploy.sh %container%"
+                ssh %username_app%@${'$'}IP_APP_PRIVATE "cd /opt/kickscooter && sudo bash deploy.sh %container%"
             """.trimIndent()
         }
     }
