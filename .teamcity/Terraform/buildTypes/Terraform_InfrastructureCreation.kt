@@ -38,7 +38,7 @@ object Terraform_InfrastructureCreation : BuildType({
 
     triggers {
         retryBuild {
-            attempts = 1
+            attempts = 2
         }
     }
 })
