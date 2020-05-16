@@ -6,6 +6,10 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 object Terraform_InfrastructureDestroying : BuildType({
     name = "Destroy infrastructure"
 
+    params {
+        password("env.ARM_CLIENT_ID", "credentialsJSON:7f676f25-1a15-4eac-81a3-ebc80417c816", display = ParameterDisplay.HIDDEN, readOnly = true)
+    }
+
     vcs {
         root(_Self.vcsRoots.Dp185DevOpsPRiS)
     }
