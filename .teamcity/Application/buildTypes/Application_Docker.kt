@@ -22,7 +22,6 @@ object Application_Docker : Template({
                     path = "Dockerfile"
                 }
                 namesAndTags = "%service%"
-                commandArgs = "--pull"
             }
             param("dockerImage.platform", "linux")
         }
