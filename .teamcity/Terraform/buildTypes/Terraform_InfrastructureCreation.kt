@@ -26,7 +26,6 @@ object Terraform_InfrastructureCreation : BuildType({
             scriptContent = """
                 cp /root/gcp/fourthdemo-274718-829977cd6967.json .
                 
-                export TF_LOG=TRACE
                 terraform init -backend=true
                 terraform apply -auto-approve
                 
