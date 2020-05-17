@@ -64,9 +64,6 @@ object Project : Project({
         keepRule {
             id = "KEEP_RULE_1"
             keepAtLeast = allBuilds()
-            applyToBuilds {
-                withStatus = successful()
-            }
             dataToKeep = historyAndStatistics {
                 preserveLogs = true
             }
