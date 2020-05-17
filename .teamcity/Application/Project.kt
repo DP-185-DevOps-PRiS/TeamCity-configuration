@@ -67,7 +67,9 @@ object Project : Project({
             applyToBuilds {
                 withStatus = successful()
             }
-            dataToKeep = statisticsOnly()
+            dataToKeep = historyAndStatistics {
+                preserveLogs = true
+            }
             applyPerEachBranch = true
             preserveArtifactsDependencies = true
         }
