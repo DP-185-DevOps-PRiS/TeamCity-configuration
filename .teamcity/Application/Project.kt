@@ -60,6 +60,19 @@ object Project : Project({
         }
     }
 
+    cleanup {
+        keepRule {
+            id = "KEEP_RULE_1"
+            keepAtLeast = allBuilds()
+            applyToBuilds {
+                withStatus = successful()
+            }
+            dataToKeep = statisticsOnly()
+            applyPerEachBranch = true
+            preserveArtifactsDependencies = true
+        }
+    }
+
     subProject(Application_Discovery.Project)
     subProject(Application_Messaging.Project)
     subProject(Application_Simulation.Project)
