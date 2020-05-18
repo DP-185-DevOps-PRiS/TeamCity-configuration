@@ -30,8 +30,8 @@ object Terraform_InfrastructureCreation : BuildType({
             scriptContent = """
                 cp /root/gcp/fourthdemo-274718-829977cd6967.json .
                 
-                terraform init -backend=true
-                terraform apply -auto-approve
+                sudo terraform init -backend=true
+                sudo terraform apply -auto-approve
                 
                 echo "Sending IPs ..."
                 scp db_ip.txt vm_ip_priv.txt %username_tc%@%ip_tc%:/root/IPs
