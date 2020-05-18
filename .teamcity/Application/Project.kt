@@ -10,6 +10,7 @@ object Project : Project({
     name = "Application"
 
     buildType(Application_PrepareServerForDeploy)
+    buildType(Application_TestRestApi)
 
     template(Application_PackagingTemplate)
     template(Application_Docker)
