@@ -39,6 +39,7 @@ object Project : Project({
             type = "CloudProfile"
             param("profileServerUrl", "http://10.128.0.3:8111")
             param("system.cloud.profile_id", "google-4")
+            param("agent_pool_id", "-2")
             param("total-work-time", "")
             param("credentialsType", "key")
             param("description", "")
@@ -48,7 +49,7 @@ object Project : Project({
             param("profileId", "google-4")
             param("name", "Google-terraform-agent")
             param("next-hour", "")
-            param("terminate-idle-time", "1")
+            param("terminate-idle-time", "")
             param("secure:accessKey", "credentialsJSON:1d60cf65-375e-40be-ae27-e374c8f2a8e3")
         }
     }
