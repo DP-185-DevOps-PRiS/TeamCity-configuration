@@ -1,6 +1,8 @@
 package Terraform.buildTypes
 
+import _Self.vcsRoots.Dp185DevOpsPRiS
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.retryBuild
 
@@ -39,6 +41,18 @@ object Terraform_InfrastructureCreation : BuildType({
     triggers {
         retryBuild {
             attempts = 2
+        }
+    }
+
+    features {
+        commitStatusPublisher {
+            vcsRootExtId = "${Dp185DevOpsPRiS.id}"
+            publisher = github {
+                githubUrl = "https://api.github.com"
+                authType = personalToken {
+                    token = "credentialsJSON:ecf91188-9a4b-4d29-87a5-ccb06b6fc589"
+                }
+            }
         }
     }
 })
