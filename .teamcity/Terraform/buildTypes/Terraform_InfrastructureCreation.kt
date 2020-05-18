@@ -5,6 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.retryBuild
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 object Terraform_InfrastructureCreation : BuildType({
     name = "Create infrastructure"
@@ -41,6 +42,8 @@ object Terraform_InfrastructureCreation : BuildType({
     triggers {
         retryBuild {
             attempts = 2
+        }
+        vcs {
         }
     }
 
