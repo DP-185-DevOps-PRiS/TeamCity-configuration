@@ -9,6 +9,7 @@ object Application_DeployAppOnTheNewServer : BuildType({
     params {
         password("username_app", "credentialsJSON:da22594b-73c4-4496-afd6-71512fc907e7", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.IDENTITY_DB", "credentialsJSON:2139cf49-8d8d-4993-bbc3-45b20f110b04", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("env.SIMULATOR_DB", "credentialsJSON:ec8aa025-bbe0-4ab1-8457-a76b2f73cf84", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("database_username", "credentialsJSON:cf6455f3-e3ea-471f-8248-9bd2f420a755", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.MESSAGING_DB", "credentialsJSON:ef4276d4-5f3d-4b6d-92a4-579fa03364e1", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.PAYMENT_DB", "credentialsJSON:c9c6efdc-c2bf-4f47-871f-c2c2fae6e8a7", display = ParameterDisplay.HIDDEN, readOnly = true)
