@@ -49,7 +49,7 @@ object Project : Project({
             param("profileId", "google-4")
             param("name", "Google-terraform-agent")
             param("next-hour", "")
-            param("terminate-idle-time", "10")
+            param("terminate-idle-time", "1")
             param("secure:accessKey", "credentialsJSON:1d60cf65-375e-40be-ae27-e374c8f2a8e3")
         }
     }
