@@ -32,8 +32,10 @@ object Terraform_InfrastructureCreation : BuildType({
                 terraform init -backend=true
                 terraform apply -auto-approve
                 
-                echo "Sending IPs ..."
-                scp db_ip.txt %username_tc%@%ip_tc%:/root/IPs
+                echo "Sending updated env-files to the Google Storage ..."
+                mkdir env && chmod 700 env
+                DB_IP=${'$'}( cat dp_ip.txt )
+                sed "s|ip|${'$'}DB_IP" %env_templates_path%/%service%-template.env > env/%service%.env
             """.trimIndent()
         }
     }
