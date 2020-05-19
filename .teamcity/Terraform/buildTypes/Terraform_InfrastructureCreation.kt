@@ -18,6 +18,7 @@ object Terraform_InfrastructureCreation : BuildType({
         password("ip_tc", "credentialsJSON:60cc8de1-2624-4259-b539-7063000c6f44", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.ARM_CLIENT_SECRET", "credentialsJSON:53dbf002-6b58-46b5-b977-d6bd992c1b48", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("BUCKET_NAME", "credentialsJSON:e2f62c8d-69c1-4358-a022-60a63b2d7c77", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("PROJECT_ID", "credentialsJSON:52eb176b-be65-4b1f-9363-137ea6254dd5", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
 
     vcs {
