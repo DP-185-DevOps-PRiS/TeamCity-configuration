@@ -40,6 +40,7 @@ object Terraform_InfrastructureCreation : BuildType({
 
     triggers {
         vcs {
+            enabled = false
         }
     }
 
