@@ -27,7 +27,7 @@ object Terraform_InfrastructureCreation : BuildType({
             name = "Init & Apply"
             workingDir = "terraform_infrastructure"
             scriptContent = """
-                cp /root/gcp/%PROJECT_ID%.json .
+                cp %PROJECT_ID% .
                 
                 terraform init -backend=true
                 terraform apply -auto-approve
