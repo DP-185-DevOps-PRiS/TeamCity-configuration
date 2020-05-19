@@ -10,8 +10,7 @@ object Application_TestRestApi : BuildType({
         script {
             name = "I have been executed by REST request"
             scriptContent = """
-                whoami
-                if [ ${'$'}whoami == root ]; then
+                if [ whoami == root ]; then
                   echo "Hi, root."
                 else
                   echo "I don't know you."
