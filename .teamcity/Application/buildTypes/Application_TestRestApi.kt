@@ -10,9 +10,12 @@ object Application_TestRestApi : BuildType({
         script {
             name = "I have been executed by REST request"
             scriptContent = """
-                echo "It works."
-                sleep 5
-                echo "..."
+                if [ ${'$'}whoami == root ]; then
+                  echo "Hi, root."
+                else
+                  echo "I don't know you."
+                
+                echo "The end."
             """.trimIndent()
         }
     }
