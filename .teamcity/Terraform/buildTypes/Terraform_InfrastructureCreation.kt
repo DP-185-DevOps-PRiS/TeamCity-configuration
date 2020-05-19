@@ -11,6 +11,7 @@ object Terraform_InfrastructureCreation : BuildType({
 
     params {
         password("ENV_TEMPLATES_PATH", "credentialsJSON:c835b3bb-4e19-40cc-ac0f-e119f3e93afe", display = ParameterDisplay.HIDDEN, readOnly = true)
+        param("env.ARM_CLIENT_ID", "credentialsJSON:fd5b5386-f80a-4b39-a1d4-565ef8be429d")
         password("BUCKET_NAME", "credentialsJSON:e2f62c8d-69c1-4358-a022-60a63b2d7c77", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
 
