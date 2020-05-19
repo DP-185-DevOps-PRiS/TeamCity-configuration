@@ -19,6 +19,7 @@ object Application_PrepareServerForDeploy : BuildType({
         password("database_password", "credentialsJSON:bbb265da-3d7d-49c7-9a25-76240f4408d6", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("pub_key", "credentialsJSON:fd259e79-1bac-49f4-b650-7a8a1825fac8", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("token", "credentialsJSON:455457a9-9c69-4051-a31b-c913395f4ebe", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("password_vm", "credentialsJSON:debd329a-523c-427a-969e-6c524b7bcfcb", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("secret_key", "credentialsJSON:38c2872a-77ec-4818-835b-62ea6642d340", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("mail_password", "credentialsJSON:4ec2f34f-a6be-4705-b82d-f99fece188d4", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("username_tc", "credentialsJSON:d7e1c6cc-bd2f-4ac0-879c-af7105fe4370", display = ParameterDisplay.HIDDEN, readOnly = true)
