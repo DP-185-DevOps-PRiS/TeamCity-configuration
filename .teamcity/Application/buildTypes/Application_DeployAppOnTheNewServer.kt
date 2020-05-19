@@ -15,5 +15,9 @@ object Application_DeployAppOnTheNewServer : BuildType({
                 # Send them to the /opt/kickscooter
             """.trimIndent()
         }
+        script {
+            name = "Run deploy.sh"
+            scriptContent = "# Run script which execute deploy.sh with service param. at the end"
+        }
     }
 })
