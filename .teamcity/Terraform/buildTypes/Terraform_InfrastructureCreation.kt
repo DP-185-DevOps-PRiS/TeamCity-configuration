@@ -32,10 +32,17 @@ object Terraform_InfrastructureCreation : BuildType({
                 terraform init -backend=true
                 terraform apply -auto-approve
                 
-                echo "Sending updated env-files to the Google Storage ..."
-                mkdir env && chmod 700 env
+                echo "Update env-files ..."
+                service_list=(gateway identity messaging payment simulator trip vehicle)
                 DB_IP=${'$'}( cat dp_ip.txt )
-                sed "s|ip|${'$'}DB_IP" %env_templates_path%/%service%-template.env > env/%service%.env
+                mkdir env && chmod 700 env
+                cp %ENV_TEMPLATES_PATH%/kafka.env env
+                for service in ${'$'}{service_list[*]}; do
+                  sed "s|ip|${'$'}DB_IP|" %ENV_TEMPLATES_PATH%/${'$'}{service}-template.env > env/${'$'}{service}.env
+                done
+                
+                echo "Sending updated env-files to the Google Storage ..."
+                gsutil -q cp -r env/ gs://%BUCKET_NAME%/
             """.trimIndent()
         }
     }
