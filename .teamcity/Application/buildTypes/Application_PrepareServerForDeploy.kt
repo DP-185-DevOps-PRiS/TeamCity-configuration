@@ -66,6 +66,7 @@ object Application_PrepareServerForDeploy : BuildType({
 
     triggers {
         finishBuildTrigger {
+            enabled = false
             buildType = "${Terraform_InfrastructureCreation.id}"
             successfulOnly = true
         }
