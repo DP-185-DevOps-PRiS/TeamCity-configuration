@@ -14,7 +14,7 @@ object Application_TestRestApi : BuildType({
                   echo "Hi, root."
                 else
                   echo "I don't know you."
-                
+                fi
                 echo "The end."
             """.trimIndent()
         }
