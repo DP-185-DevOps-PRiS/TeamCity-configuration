@@ -12,6 +12,7 @@ object Project : Project({
     buildType(Terraform_InfrastructureDestroying)
 
     params {
+        password("PROJECT_ID", "credentialsJSON:52eb176b-be65-4b1f-9363-137ea6254dd5", display = ParameterDisplay.HIDDEN, readOnly = true)
         text("repo", "Terraform", readOnly = true, allowEmpty = true)
     }
 
