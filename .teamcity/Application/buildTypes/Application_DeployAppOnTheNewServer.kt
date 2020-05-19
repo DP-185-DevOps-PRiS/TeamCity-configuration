@@ -19,6 +19,7 @@ object Application_DeployAppOnTheNewServer : BuildType({
         password("secret_key", "credentialsJSON:38c2872a-77ec-4818-835b-62ea6642d340", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("mail_password", "credentialsJSON:4ec2f34f-a6be-4705-b82d-f99fece188d4", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("username_tc", "credentialsJSON:d7e1c6cc-bd2f-4ac0-879c-af7105fe4370", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("env.VEHICLE_DB", "credentialsJSON:21138bb2-8e3b-48ee-989d-a1179216fe08", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("send_mail", "credentialsJSON:689f6d3a-b429-4952-b808-aaa52d462995", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("env.TRIP_DB", "credentialsJSON:27c3ca79-1dd0-4242-9c9a-1c2fe711cd54", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("ip_tc", "credentialsJSON:60cc8de1-2624-4259-b539-7063000c6f44", display = ParameterDisplay.HIDDEN, readOnly = true)
