@@ -30,7 +30,16 @@ object Application_DeployAppOnTheNewServer : BuildType({
         script {
             name = "Send env-files"
             scriptContent = """
-                # Read new IP
+                echo "Downloading current IPs ..."
+                scp -i /root/.ssh/.tc/id_rsa -r %username_tc%@%ip_tc%:~/IPs/AzureScaleSet .
+                
+                echo "Setting IP variables ..."
+                ip_count=${'$'}(ls -la AzureScaleSet | grep -c az)
+                for (( i=1; i<=${'$'}ip_count; i++ )); do
+                  IP
+                done
+                IP_APP_PRIVATE=${'$'}( cat IPs/vm_ip_priv.txt )
+                
                 # Update env-files
                 # Send them to the /opt/kickscooter
             """.trimIndent()
