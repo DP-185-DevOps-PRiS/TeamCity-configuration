@@ -14,7 +14,6 @@ object Terraform_InfrastructureCreation : BuildType({
         password("env.ARM_TENANT_ID", "credentialsJSON:3a8befbc-d61b-4c90-ac44-e813a0a459b1", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("ENV_TEMPLATES_PATH", "credentialsJSON:c835b3bb-4e19-40cc-ac0f-e119f3e93afe", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("BUCKET_NAME", "credentialsJSON:e2f62c8d-69c1-4358-a022-60a63b2d7c77", display = ParameterDisplay.HIDDEN, readOnly = true)
-        password("env.ARM_CLIENT_SECRET", "credentialsJSON:53dbf002-6b58-46b5-b977-d6bd992c1b48", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
 
     vcs {
