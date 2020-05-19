@@ -2,7 +2,6 @@ package Terraform.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.retryBuild
 
 object Terraform_InfrastructureDestroying : BuildType({
     name = "Destroy infrastructure"
@@ -28,12 +27,6 @@ object Terraform_InfrastructureDestroying : BuildType({
                 terraform init -backend=true
                 terraform destroy -auto-approve
             """.trimIndent()
-        }
-    }
-
-    triggers {
-        retryBuild {
-            attempts = 1
         }
     }
 })
