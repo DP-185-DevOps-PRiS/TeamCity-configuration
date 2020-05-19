@@ -22,8 +22,7 @@ object Terraform_InfrastructureDestroying : BuildType({
             name = "Destroy"
             workingDir = "terraform_infrastructure"
             scriptContent = """
-                cp /root/gcp/fourthdemo-274718-829977cd6967.json .
-                
+                cp %PROJECT_ID% .
                 terraform init -backend=true
                 terraform destroy -auto-approve
             """.trimIndent()
