@@ -9,6 +9,7 @@ object Application_Identity_Deploy : BuildType({
 
     params {
         param("container", "identity")
+        param("CONTAINER", "identity")
     }
 
     triggers {
