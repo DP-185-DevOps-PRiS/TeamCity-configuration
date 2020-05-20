@@ -30,7 +30,7 @@ object Application_Payment_Packaging : BuildType({
             localRepoScope = MavenBuildStep.RepositoryScope.MAVEN_DEFAULT
             jdkHome = "%env.JDK_11_x64%"
         }
-        stepsOrder = arrayListOf("RUNNER_11", "RUNNER_6")
+        stepsOrder = arrayListOf("RUNNER_11", "RUNNER_6", "RUNNER_8")
     }
 
     dependencies {
