@@ -31,7 +31,7 @@ object Application_Docker : Template({
             id = "RUNNER_2"
             commandType = other {
                 subCommand = "tag"
-                commandArgs = "%service% %login_server%/%service%"
+                commandArgs = "%SERVICE% %LOGIN_SERVER%/%SERVICE%"
             }
         }
         dockerCommand {
