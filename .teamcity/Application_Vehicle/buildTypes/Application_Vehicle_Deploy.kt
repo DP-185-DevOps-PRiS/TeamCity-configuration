@@ -9,6 +9,7 @@ object Application_Vehicle_Deploy : BuildType({
 
     params {
         param("container", "vehicle")
+        param("CONTAINER", "vehicle")
     }
 
     triggers {
