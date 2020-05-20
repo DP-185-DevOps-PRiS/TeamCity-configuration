@@ -8,7 +8,6 @@ object Application_Payment_Deploy : BuildType({
     name = "Deploy"
 
     params {
-        param("container", "payment")
         param("CONTAINER", "payment")
     }
 
