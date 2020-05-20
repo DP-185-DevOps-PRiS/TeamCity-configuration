@@ -10,6 +10,7 @@ object Application_Payment_Packaging : BuildType({
     name = "Package"
 
     params {
+        param("REPO", "kick-scooter-payment")
         param("service", "payment")
     }
 
