@@ -7,6 +7,10 @@ object Application_Messaging_Deploy : BuildType({
     templates(Application.buildTypes.Application_Deploy)
     name = "Deploy"
 
+    params {
+        param("CONTAINER", "messaging")
+    }
+
     triggers {
         finishBuildTrigger {
             id = "TRIGGER_20"
