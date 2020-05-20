@@ -14,6 +14,7 @@ object Application_Identity_Package : BuildType({
     publishArtifacts = PublishMode.SUCCESSFUL
 
     params {
+        param("REPO", "kick-scooter-identity")
         param("env.JDK_11_x64", "/usr/lib/jvm/java-11-openjdk-amd64")
     }
 
