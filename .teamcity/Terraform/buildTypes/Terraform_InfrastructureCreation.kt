@@ -33,21 +33,19 @@ object Terraform_InfrastructureCreation : BuildType({
             name = "Update env-files"
             workingDir = "terraform_infrastructure"
             scriptContent = """
+                set -x
                 echo "Update env-files ..."
                 service_list=(gateway identity messaging payment simulator trip vehicle)
-                echo "error here"
                 DB_IP=${'$'}( cat db_ip.txt )
-                echo "error here"
                 mkdir env && chmod 700 env
-                echo "error here"
                 cp %ENV_TEMPLATES_PATH%/kafka.env env
-                echo "error here"
                 for service in ${'$'}{service_list[*]}; do
                   sed "s|ip|${'$'}DB_IP|" %ENV_TEMPLATES_PATH%/${'$'}{service}-template.env > env/${'$'}{service}.env
                 done
                 
                 echo "Sending updated env-files to the Google Storage ..."
                 gsutil -q cp -r env/ gs://%BUCKET_NAME%/
+                set +x
             """.trimIndent()
         }
     }
