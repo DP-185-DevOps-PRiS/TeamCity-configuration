@@ -41,11 +41,5 @@ object Application_Identity_Package : BuildType({
             }
             jdkHome = "%env.JDK_11_x64%"
         }
-        step {
-            name = "Inspection of code quality"
-            type = "sonar-plugin"
-            param("teamcity.build.workingDir", "identity-service")
-            param("sonarServer", "f1b3189f-52b1-4225-953d-6cfe2bd004d3")
-        }
     }
 })
