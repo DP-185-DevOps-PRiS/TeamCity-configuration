@@ -7,6 +7,10 @@ object Application_Discovery_Deploy : BuildType({
     templates(Application.buildTypes.Application_Deploy)
     name = "Deploy"
 
+    params {
+        param("CONTAINER", "discovery")
+    }
+
     triggers {
         finishBuildTrigger {
             id = "TRIGGER_17"
