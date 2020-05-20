@@ -35,9 +35,13 @@ object Terraform_InfrastructureCreation : BuildType({
             scriptContent = """
                 echo "Update env-files ..."
                 service_list=(gateway identity messaging payment simulator trip vehicle)
+                echo "error here"
                 DB_IP=${'$'}( cat db_ip.txt )
+                echo "error here"
                 mkdir env && chmod 700 env
+                echo "error here"
                 cp %ENV_TEMPLATES_PATH%/kafka.env env
+                echo "error here"
                 for service in ${'$'}{service_list[*]}; do
                   sed "s|ip|${'$'}DB_IP|" %ENV_TEMPLATES_PATH%/${'$'}{service}-template.env > env/${'$'}{service}.env
                 done
