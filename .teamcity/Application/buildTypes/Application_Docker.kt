@@ -38,7 +38,7 @@ object Application_Docker : Template({
             name = "Push image"
             id = "RUNNER_3"
             commandType = push {
-                namesAndTags = "%login_server%/%service%"
+                namesAndTags = "%LOGIN_SERVER%/%SERVICE%"
             }
         }
     }
