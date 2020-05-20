@@ -7,6 +7,10 @@ object Application_Simulation_Deploy : BuildType({
     templates(Application.buildTypes.Application_Deploy)
     name = "Deploy"
 
+    params {
+        param("CONTAINER", "simulator")
+    }
+
     triggers {
         finishBuildTrigger {
             id = "TRIGGER_22"
