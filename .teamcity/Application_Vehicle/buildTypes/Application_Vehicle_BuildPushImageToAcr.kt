@@ -7,6 +7,10 @@ object Application_Vehicle_BuildPushImageToAcr : BuildType({
     templates(Application.buildTypes.Application_Docker)
     name = "Build & Push image to ACR"
 
+    params {
+        param("SERVICE", "vehicle")
+    }
+
     triggers {
         finishBuildTrigger {
             id = "TRIGGER_8"
