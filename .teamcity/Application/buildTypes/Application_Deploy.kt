@@ -12,7 +12,6 @@ object Application_Deploy : Template({
     publishArtifacts = PublishMode.SUCCESSFUL
 
     params {
-        password("server", "credentialsJSON:142c01de-b679-4822-8bd5-92ead4140cf1", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("username_app", "credentialsJSON:da22594b-73c4-4496-afd6-71512fc907e7", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("URI_ACR", "credentialsJSON:142c01de-b679-4822-8bd5-92ead4140cf1", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("PASSWORD_ACR", "credentialsJSON:14665d28-7888-421c-9e5c-6854a9ec0b1f", display = ParameterDisplay.HIDDEN, readOnly = true)
