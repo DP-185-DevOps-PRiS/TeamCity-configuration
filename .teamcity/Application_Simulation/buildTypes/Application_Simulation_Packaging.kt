@@ -8,6 +8,5 @@ object Application_Simulation_Packaging : BuildType({
 
     params {
         param("service", "simulator")
-        param("repo", "kick-scooter-simulator")
     }
 })
