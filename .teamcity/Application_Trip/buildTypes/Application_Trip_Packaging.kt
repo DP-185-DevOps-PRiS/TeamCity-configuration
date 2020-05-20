@@ -9,6 +9,10 @@ object Application_Trip_Packaging : BuildType({
     templates(Application.buildTypes.Application_PackagingTemplate)
     name = "Package"
 
+    params {
+        param("REPO", "kick-scooter-trip")
+    }
+
     steps {
         exec {
             name = "Install identity-starter dependency"
