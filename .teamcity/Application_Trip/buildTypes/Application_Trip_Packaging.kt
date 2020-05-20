@@ -10,7 +10,6 @@ object Application_Trip_Packaging : BuildType({
     name = "Package"
 
     params {
-        param("service", "trip")
         param("repo", "kick-scooter-trip")
     }
 
