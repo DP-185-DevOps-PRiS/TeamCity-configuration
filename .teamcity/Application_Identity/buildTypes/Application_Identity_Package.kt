@@ -15,7 +15,6 @@ object Application_Identity_Package : BuildType({
 
     params {
         param("env.JDK_11_x64", "/usr/lib/jvm/java-11-openjdk-amd64")
-        param("repo", "kick-scooter-identity")
     }
 
     vcs {
