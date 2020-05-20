@@ -7,10 +7,6 @@ object Application_Payment_BuildPushImageToAcr : BuildType({
     templates(Application.buildTypes.Application_Docker)
     name = "Build & Push image to ACR"
 
-    params {
-        param("service", "payment")
-    }
-
     triggers {
         finishBuildTrigger {
             id = "TRIGGER_6"
