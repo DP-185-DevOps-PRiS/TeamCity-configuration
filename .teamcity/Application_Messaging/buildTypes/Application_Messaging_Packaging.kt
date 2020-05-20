@@ -10,6 +10,7 @@ object Application_Messaging_Packaging : BuildType({
     name = "Package"
 
     params {
+        param("REPO", "kick-scooter-messaging")
         param("service", "messaging")
     }
 
