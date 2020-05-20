@@ -33,7 +33,7 @@ object Terraform_InfrastructureCreation : BuildType({
             name = "Update env-files"
             workingDir = "terraform_infrastructure"
             scriptContent = """
-                set -x
+                #!/bin/bash
                 echo "Update env-files ..."
                 service_list=(gateway identity messaging payment simulator trip vehicle)
                 DB_IP=${'$'}( cat db_ip.txt )
@@ -45,7 +45,6 @@ object Terraform_InfrastructureCreation : BuildType({
                 
                 echo "Sending updated env-files to the Google Storage ..."
                 gsutil -q cp -r env/ gs://%BUCKET_NAME%/
-                set +x
             """.trimIndent()
         }
     }
