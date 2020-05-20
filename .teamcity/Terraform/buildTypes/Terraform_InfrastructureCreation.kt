@@ -9,8 +9,6 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 object Terraform_InfrastructureCreation : BuildType({
     name = "Create infrastructure"
 
-    allowExternalStatus = true
-
     params {
         password("BUCKET_NAME", "credentialsJSON:e2f62c8d-69c1-4358-a022-60a63b2d7c77", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("ENV_TEMPLATES_PATH", "credentialsJSON:c835b3bb-4e19-40cc-ac0f-e119f3e93afe", display = ParameterDisplay.HIDDEN, readOnly = true)
