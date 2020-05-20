@@ -9,6 +9,7 @@ object Application_Trip_Deploy : BuildType({
 
     params {
         param("container", "trip")
+        param("CONTAINER", "trip")
     }
 
     triggers {
