@@ -8,7 +8,6 @@ object Application_Gateway_Deploy : BuildType({
     name = "Deploy"
 
     params {
-        param("container", "gateway")
         param("CONTAINER", "gateway")
     }
 
