@@ -8,7 +8,6 @@ object Application_Identity_Deploy : BuildType({
     name = "Deploy"
 
     params {
-        param("container", "identity")
         param("CONTAINER", "identity")
     }
 
