@@ -11,6 +11,7 @@ object Application_Docker : Template({
 
     params {
         password("login_server", "credentialsJSON:142c01de-b679-4822-8bd5-92ead4140cf1", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("LOGIN_SERVER", "credentialsJSON:142c01de-b679-4822-8bd5-92ead4140cf1", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
 
     steps {
