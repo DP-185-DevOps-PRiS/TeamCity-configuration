@@ -9,6 +9,7 @@ object Application_Payment_Deploy : BuildType({
 
     params {
         param("container", "payment")
+        param("CONTAINER", "payment")
     }
 
     triggers {
