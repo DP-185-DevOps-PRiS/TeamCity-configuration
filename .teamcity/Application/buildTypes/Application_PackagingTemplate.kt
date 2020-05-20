@@ -4,6 +4,7 @@ import _Self.vcsRoots.Dp185DevOpsPRiS
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 object Application_PackagingTemplate : Template({
     name = "Package"
@@ -37,6 +38,12 @@ object Application_PackagingTemplate : Template({
             id = "RUNNER_8"
             type = "sonar-plugin"
             param("sonarServer", "f1b3189f-52b1-4225-953d-6cfe2bd004d3")
+        }
+    }
+
+    triggers {
+        vcs {
+            id = "vcsTrigger"
         }
     }
 
