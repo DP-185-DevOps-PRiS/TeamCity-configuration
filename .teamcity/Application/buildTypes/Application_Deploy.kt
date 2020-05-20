@@ -32,7 +32,7 @@ object Application_Deploy : Template({
                 
                 echo -n "Determining the number of servers ..."
                 ip_address_list=()
-                for file in IPs/AzureScaleSet/*.txt; do
+                for file in AzureScaleSet/*.txt; do
                   ip=${'$'}( cat "${'$'}file" )
                   ip_address_list+=(${'$'}ip)
                 done
