@@ -8,7 +8,6 @@ object Application_Vehicle_Deploy : BuildType({
     name = "Deploy"
 
     params {
-        param("container", "vehicle")
         param("CONTAINER", "vehicle")
     }
 
