@@ -14,6 +14,15 @@ object Project : Project({
     template(Application_Deploy)
 
     features {
+        feature {
+            id = "PROJECT_EXT_4"
+            type = "sonar-qube"
+            param("password", "zxxe39e3f3df6ad3740a7850d6d8e026262")
+            param("name", "GCP SonarQube")
+            param("id", "f1b3189f-52b1-4225-953d-6cfe2bd004d3")
+            param("login", "admin")
+            param("url", "http://10.138.0.3/")
+        }
         dockerRegistry {
             id = "PROJECT_EXT_5"
             name = "Azure Container Registry"
