@@ -7,6 +7,10 @@ object Application_Gateway_BuildPushImageToAcr : BuildType({
     templates(Application.buildTypes.Application_Docker)
     name = "Build & Push image to ACR"
 
+    params {
+        param("SERVICE", "gateway")
+    }
+
     triggers {
         finishBuildTrigger {
             id = "TRIGGER_2"
