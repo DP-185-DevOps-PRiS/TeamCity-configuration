@@ -33,13 +33,6 @@ object Application_PackagingTemplate : Template({
             }
             jdkHome = "%env.JDK_11_x64%"
         }
-        step {
-            name = "Inspection of code quality"
-            id = "RUNNER_8"
-            type = "sonar-plugin"
-            param("teamcity.tool.sonarquberunner", "%teamcity.tool.sonar-qube-scanner.4.2.0.1873-scanner%")
-            param("sonarServer", "f1b3189f-52b1-4225-953d-6cfe2bd004d3")
-        }
     }
 
     triggers {
