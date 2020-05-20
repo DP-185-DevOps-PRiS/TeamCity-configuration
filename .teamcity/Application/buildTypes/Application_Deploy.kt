@@ -26,6 +26,7 @@ object Application_Deploy : Template({
             name = "Run deploy.sh"
             id = "RUNNER_4"
             scriptContent = """
+                #!/bin/bash
                 echo "Downloading current IPs ..."
                 scp -i /root/.ssh/.tc/id_rsa -r %USERNAME_TC%@%IP_TC%:~/IPs/AzureScaleSet .
                 
