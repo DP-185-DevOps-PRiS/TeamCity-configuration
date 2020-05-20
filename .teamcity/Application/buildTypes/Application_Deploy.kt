@@ -16,6 +16,7 @@ object Application_Deploy : Template({
         password("username_app", "credentialsJSON:da22594b-73c4-4496-afd6-71512fc907e7", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("username_tc", "credentialsJSON:d7e1c6cc-bd2f-4ac0-879c-af7105fe4370", display = ParameterDisplay.HIDDEN, readOnly = true)
         password("user", "credentialsJSON:c2eaf1bd-00bf-4e0f-8a65-2ee1800e5a57", display = ParameterDisplay.HIDDEN, readOnly = true)
+        password("IP_TC", "credentialsJSON:60cc8de1-2624-4259-b539-7063000c6f44", display = ParameterDisplay.HIDDEN, readOnly = true)
     }
 
     steps {
