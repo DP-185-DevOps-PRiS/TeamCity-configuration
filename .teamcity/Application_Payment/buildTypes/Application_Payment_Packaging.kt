@@ -11,7 +11,6 @@ object Application_Payment_Packaging : BuildType({
 
     params {
         param("service", "payment")
-        param("repo", "kick-scooter-payment")
     }
 
     steps {
