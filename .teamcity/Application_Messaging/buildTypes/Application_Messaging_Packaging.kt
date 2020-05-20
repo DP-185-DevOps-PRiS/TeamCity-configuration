@@ -11,7 +11,6 @@ object Application_Messaging_Packaging : BuildType({
 
     params {
         param("REPO", "kick-scooter-messaging")
-        param("service", "messaging")
     }
 
     steps {
