@@ -9,6 +9,7 @@ object Application_Gateway_Deploy : BuildType({
 
     params {
         param("container", "gateway")
+        param("CONTAINER", "gateway")
     }
 
     triggers {
