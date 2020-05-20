@@ -8,7 +8,6 @@ object Application_Trip_Deploy : BuildType({
     name = "Deploy"
 
     params {
-        param("container", "trip")
         param("CONTAINER", "trip")
     }
 
