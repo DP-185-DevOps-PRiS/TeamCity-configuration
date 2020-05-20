@@ -8,6 +8,5 @@ object Application_Discovery_Packaging : BuildType({
 
     params {
         param("REPO", "kick-scooter-discovery")
-        param("service", "discovery")
     }
 })
