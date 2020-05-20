@@ -46,7 +46,7 @@ object Application_Deploy : Template({
                 
                 echo "Deploy ..."
                 for IP in ${'$'}{health_servers[*]}; do
-                  ssh %USERNAME_APP%@${'$'}IP "cd /opt/kickscooter && echo %PASSWORD_VM% | sudo -S docker login -u %USER% -p %PASSWORD_ACR% %URI% && echo %PASSWORD_VM% | sudo -S bash deploy.sh %CONTAINER%"
+                  ssh %USERNAME_APP%@${'$'}IP "cd /opt/kickscooter && echo %PASSWORD_VM% | sudo -S docker login -u %USER_ACR% -p %PASSWORD_ACR% %URI_ACR% && echo %PASSWORD_VM% | sudo -S bash deploy.sh %CONTAINER%"
                 done
             """.trimIndent()
         }
