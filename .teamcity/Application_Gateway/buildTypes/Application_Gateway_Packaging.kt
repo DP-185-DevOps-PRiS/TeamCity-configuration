@@ -7,6 +7,7 @@ object Application_Gateway_Packaging : BuildType({
     name = "Package"
 
     params {
+        param("REPO", "kick-scooter-gateway")
         param("service", "gateway")
     }
 })
