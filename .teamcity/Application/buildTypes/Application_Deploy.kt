@@ -30,23 +30,26 @@ object Application_Deploy : Template({
                 echo "Downloading current IPs ..."
                 scp -i /root/.ssh/.tc/id_rsa -r %USERNAME_TC%@%IP_TC%:~/IPs/AzureScaleSet .
                 
-                echo "Determining the number of servers ..."
+                echo -n "Determining the number of servers ..."
                 ip_address_list=()
                 for file in IPs/AzureScaleSet/*.txt; do
                   ip=${'$'}( cat "${'$'}file" )
                   ip_address_list+=(${'$'}ip)
                 done
+                echo " ${'$'}{#ip_address_list[@]}"
                 
-                echo "Checking server health ..."
+                echo -n "Checking server health ..."
                 health_servers=()
                 for server in ${'$'}{ip_address_list[*]}; do
                   if [ ${'$'}(ping -c 4 ${'$'}server | grep -c -w "0% packet loss") -eq 1 ]; then
-                    health_servers+=(${'$'}server)
+                    health_servers+=(${'$'}server) && echo -n " +"
                   else
-                    ssh -i /root/.ssh/.tc/id_rsa %USERNAME_TC%@%IP_TC% "bash ~/IPs/AzureScaleSet/clean_up_old_ip.sh ${'$'}server"
+                    echo -n " -"
+                    ssh -i /root/.ssh/.tc/id_rsa %USERNAME_TC%@%IP_TC% "bash /root/IPs/AzureScaleSet/clean_up_old_ip.sh ${'$'}server"
                   fi
                 done
                 
+                echo ""
                 echo "Deploy ..."
                 for IP in ${'$'}{health_servers[*]}; do
                   ssh %USERNAME_APP%@${'$'}IP "cd /opt/kickscooter && echo %PASSWORD_VM% | sudo -S docker login -u %USER_ACR% -p %PASSWORD_ACR% %URI_ACR% && echo %PASSWORD_VM% | sudo -S bash deploy.sh %CONTAINER%"
