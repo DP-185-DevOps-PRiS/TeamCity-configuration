@@ -30,7 +30,7 @@ object Terraform_InfrastructureCreation : BuildType({
                 
                 echo "Update env-files ..."
                 service_list=(gateway identity messaging payment simulator trip vehicle)
-                DB_IP=${'$'}( cat db_ip.txt )
+                DB_IP=${'$'}(cat db_ip.txt)
                 mkdir env && chmod 700 env
                 cp %ENV_TEMPLATES_PATH%/kafka.env env
                 for service in ${'$'}{service_list[*]}; do
